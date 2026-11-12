@@ -4,177 +4,321 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ห้องข่าว: ข่าวและกิจกรรม | เครือข่ายการศึกษาปาตารายอ</title>
-<meta name="description" content="Pataraya Synergy 2026 เปิดบ้านปาตารายอ ครบรอบ 63 ปี 24-26 กันยายน 2569 และข่าวกิจกรรมของเครือข่าย">
-<meta name="robots" content="index,follow">
+<meta name="description" content="Pataraya Synergy 2026 เปิดบ้านปาตารายอ ครบรอบ 63 ปี และข่าวกิจกรรมของเครือข่าย">
 <link rel="canonical" href="https://pataraya-pilot.vercel.app/news/">
 <meta name="theme-color" content="#0F2F4F">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="เครือข่ายการศึกษาปาตารายอ">
-<meta property="og:title" content="ห้องข่าว: ข่าวและกิจกรรม | เครือข่ายการศึกษาปาตารายอ">
-<meta property="og:description" content="Pataraya Synergy 2026 เปิดบ้านปาตารายอ ครบรอบ 63 ปี 24-26 กันยายน 2569 และข่าวกิจกรรมของเครือข่าย">
-<meta property="og:url" content="https://pataraya-pilot.vercel.app/news/">
-<meta property="og:locale" content="th_TH">
-<meta property="og:image" content="https://pataraya-pilot.vercel.app/assets/og.jpg">
-<meta name="format-detection" content="telephone=no">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/IBMPlexSansThai-400-thai.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/Anuphan-600-thai.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- ฟอนต์มาตรฐาน Google Fonts สำรองเพื่อให้ตัวหนังสือสวยคมชัดทุกเครื่อง -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css?v=d40fa5ed">
-<script src="/assets/site.js?v=d40fa5ed" defer></script>
+
+<style>
+/* CSS สำรอง ป้องกัน UI เพี้ยนเมื่อ CSS หลักโหลดไม่ทัน */
+:root {
+  --navy: #0F2F4F;
+  --navy-light: #183e66;
+  --sky: #0284c7;
+  --sky-light: #e0f2fe;
+  --bg-slate: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+}
+body {
+  font-family: 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-slate);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, .brand {
+  font-family: 'Anuphan', sans-serif;
+}
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 1rem 0;
+}
+.wrap {
+  width: 92%;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+.head-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.btn-cta {
+  background: #0284c7;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.hero-box {
+  background: linear-gradient(135deg, #0F2F4F 0%, #1a497b 100%);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.hero-box h1 {
+  font-size: 2.25rem;
+  margin: 0.5rem 0;
+}
+.hero-box p {
+  color: #94a3b8;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+/* การ์ดข่าวเด่นล่าสุด (Featured News) */
+.featured-news-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(15, 47, 79, 0.08);
+  border: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+  transition: transform 0.2s ease;
+}
+.featured-news-card:hover {
+  transform: translateY(-2px);
+}
+.featured-content {
+  padding: 2rem;
+}
+.news-badge {
+  display: inline-block;
+  background: var(--sky-light);
+  color: var(--sky);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+.news-date {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+.featured-title {
+  font-size: 1.65rem;
+  color: var(--navy);
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.4;
+}
+.featured-body {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+/* Grid สำหรับข่าวอื่นๆ */
+.news-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.sub-news-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sub-news-title {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+.sub-news-summary {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.past-events-box {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.author-tag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 1rem;
+}
+footer {
+  background: #091e33;
+  color: #94a3b8;
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+footer a { color: #38bdf8; text-decoration: none; }
+</style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="arch" viewBox="0 0 28 34"><path d="M3 33V15C3 8 8 3 14 1c6 2 11 7 11 14v18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 33V17c0-4 2.2-7 5-8.4 2.8 1.4 5 4.4 5 8.4v16" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".55"/></symbol></svg>
-<a class="skip" href="#main">ข้ามไปที่เนื้อหา</a>
-<div class="chrome">
-<div class="topbar"><div class="wrap">
-<p class="where">ตำบลจะแหน อำเภอสะบ้าย้อย จังหวัดสงขลา</p>
-<div class="right">
-<div class="lang" role="group" aria-label="ภาษา"><span lang="th" aria-current="true">ไทย</span><span lang="ms" aria-disabled="true" title="ภาษามลายู กำลังจัดทำ">MS</span><span lang="en" aria-disabled="true" title="English: coming soon">EN</span></div>
-<a href="mailto:patarayapara@gmail.com">patarayapara@gmail.com</a>
-</div></div></div>
+
 <header class="site-header">
-<div class="wrap head-top">
-<a class="brand" href="/"><img src="/assets/img/mark-light.svg" width="52" height="44" alt=""><span><b>เครือข่ายการศึกษาปาตารายอ</b><span>Pataraya Education Network</span></span></a>
-<a class="btn header-cta" href="/contact/#visit">นัดเยี่ยมชม / สอบถามการสมัคร</a>
-<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="bars" aria-hidden="true"></span>เมนู</button>
-</div>
-<nav class="main-nav" id="main-nav" aria-label="เมนูหลัก"><div class="wrap">
-<ul class="menu"><li class="top-item"><a class="top" href="/"><b>หน้าแรก</b><small>ห้องโถง</small></a></li><li class="top-item has-sub"><button class="top" type="button" aria-expanded="false" aria-controls="sub-1"><b>เกี่ยวกับเรา</b><small>รับแขก · ประชุม · เกียรติยศ</small><i class="chev" aria-hidden="true"></i></button><ul class="sub" id="sub-1"><li><a href="/about/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องรับแขก</b><small>เราเชื่ออะไร และประวัติ</small></span></a></li><li><a href="/network/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องประชุม</b><small>บุคลากรและเครือข่าย</small></span></a></li><li><a href="/honors/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องเกียรติยศ</b><small>ความภาคภูมิใจของบ้าน</small></span></a></li></ul></li><li class="top-item has-sub"><button class="top" type="button" aria-expanded="false" aria-controls="sub-2"><b>ห้องเรียน</b><small>หลักสูตร/โรงเรียน</small><i class="chev" aria-hidden="true"></i></button><ul class="sub" id="sub-2"><li><a href="/programs/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ภาพรวมห้องเรียน</b><small>หลักสูตรและโรงเรียนทั้งหมด</small></span></a></li><li><a href="/programs/#iwfs"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>IWFS</b><small>โรงเรียน<wbr>อิสลามวิทยา<wbr>มูลนิธิ</small></span></a></li><li><a href="/programs/#mutec"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>MUTEC</b><small>วิทยาลัย<wbr>เทคโนโลยี<wbr><span class="nb">พณิชยการ</span><wbr><span class="nb">มูฮำมาดีย์</span></small></span></a></li><li><a href="/programs/#muef"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>MUEF</b><small>มูลนิธิ<wbr>เพื่อการศึกษา<wbr><span class="nb">มูฮำมาดียะห์</span></small></span></a></li></ul></li><li class="top-item has-sub is-active"><button class="top" type="button" aria-expanded="false" aria-controls="sub-3"><b>นวัตกรรมและความรู้</b><small>แลป · สมุด · ข่าว</small><i class="chev" aria-hidden="true"></i></button><ul class="sub" id="sub-3"><li><a href="/raya-hub/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องแลป</b><small>นวัตกรรมและแพลตฟอร์ม</small></span></a></li><li><a href="/library/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องสมุด</b><small>งานเขียนและบทเรียน</small></span></a></li><li><a href="/news/" aria-current="page"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องข่าว</b><small>ข่าวและกิจกรรม</small></span></a></li></ul></li><li class="top-item has-sub"><button class="top" type="button" aria-expanded="false" aria-controls="sub-4"><b>ติดต่อ/สมัคร</b><small>นั่งเล่น · หน้าประตู</small><i class="chev" aria-hidden="true"></i></button><ul class="sub" id="sub-4"><li><a href="/faq/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>ห้องนั่งเล่น</b><small>FAQ ผู้ปกครอง</small></span></a></li><li><a href="/contact/"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span><b>หน้าประตู</b><small>ติดต่อ อีเมล LINE ที่ตั้ง</small></span></a></li></ul></li></ul>
-<a class="btn nav-cta" href="/contact/#visit">นัดเยี่ยมชม / สอบถามการสมัคร</a>
-</div></nav>
+  <div class="wrap head-top">
+    <a class="brand" href="/">
+      <span>🏛️ <b>เครือข่ายการศึกษาปาตารายอ</b></span>
+    </a>
+    <a class="btn-cta" href="/contact/#visit">นัดเยี่ยมชม / สอบถาม</a>
+  </div>
 </header>
-</div>
 
 <main id="main">
-<section class="hero-sub"><div class="wrap on-navy"><p class="eyebrow"><svg class="arch" width="28" height="34" viewBox="0 0 28 34" aria-hidden="true" focusable="false"><use href="#arch"/></svg><span>ห้องข่าว</span> · ข่าวและกิจกรรม</p><h1>ห้องข่าว</h1><p>ข่าว กิจกรรม และบทความของเครือข่ายจะลงที่นี่ เราลงเฉพาะรายการที่มีข้อมูลและภาพที่ได้รับอนุญาตครบ</p></div></section>
+  <section class="hero-box">
+    <div class="wrap">
+      <span class="news-badge" style="background: rgba(255,255,255,0.15); color: #fff;">ห้องข่าวสารและกิจกรรม</span>
+      <h1>ห้องข่าว</h1>
+      <p>ข่าว กิจกรรม และบทความประชาสัมพันธ์ของเครือข่ายการศึกษาปาตารายอ</p>
+    </div>
+  </section>
 
-<nav class="subbar" aria-label="ห้องในหมวดนวัตกรรมและความรู้"><div class="wrap"><span class="sb-label">นวัตกรรมและความรู้</span><ul><li><a href="/raya-hub/">ห้องแลป</a></li><li><a href="/library/">ห้องสมุด</a></li><li><a href="/news/" aria-current="page">ห้องข่าว</a></li></ul></div></nav>
+  <div class="wrap">
+    <!-- กล่องแสดงข่าวเด่นล่าสุด -->
+    <div id="latest-news-root">
+      <div style="text-align: center; padding: 3rem; background: #fff; border-radius: 12px;">
+        <p style="color: var(--text-muted);">⏳ กำลังดึงข้อมูลข่าวสารล่าสุดจากระบบ...</p>
+      </div>
+    </div>
 
-<section class="section">
-<div class="wrap" style="max-width:60rem">
+    <!-- หัวข้อข่าวอื่นๆ -->
+    <div id="sub-news-header" style="display:none; margin-bottom: 1rem;">
+      <h2 style="font-size: 1.4rem; color: var(--navy);">ข่าวและกิจกรรมอื่น ๆ</h2>
+    </div>
 
-<!-- พื้นที่แสดงข่าวล่าสุดจากฐานข้อมูล Google Sheets -->
-<div id="dynamic-latest-news" class="news-latest">
-  <p style="text-align: center; padding: 20px;">กำลังโหลดข่าวสารล่าสุด...</p>
-</div>
+    <!-- ข่าวใน Grid -->
+    <div id="sub-news-root" class="news-grid-container"></div>
 
-<!-- รายการข่าวเพิ่มเติม -->
-<div id="dynamic-news-grid" style="margin-top:2.5rem; display: grid; gap: 1.5rem;"></div>
-
-<article style="margin-top:2.5rem; border-top: 1px solid #e5e7eb; padding-top: 2rem;">
-<span class="tag tag--blue">กิจกรรมที่ผ่านมาแล้ว</span>
-<h2>Pataraya Synergy 2026 เปิดบ้านปาตารายอ</h2>
-<figure class="band"><img src="/assets/img/banner-960.webp" srcset="/assets/img/banner-480.webp 480w, /assets/img/banner-960.webp 960w, /assets/img/banner-1600.webp 1600w" sizes="(min-width:1000px) 960px, 100vw" width="1600" height="686" alt="ป้ายงาน Pataraya Synergy 2026 เปิดบ้านปาตารายอ 63 ปี วาระครบรอบประวัติศาสตร์ 24-26 September 2026" loading="lazy" decoding="async"><figcaption>ป้ายงาน Pataraya Synergy 2026</figcaption></figure>
-<dl class="facts" style="margin-top:1.2rem">
-<dt>ชื่องาน</dt><dd>Pataraya Synergy 2026 เปิดบ้านปาตารายอ</dd>
-<dt>วาระ</dt><dd>ครบรอบ 63 ปี วาระครบรอบประวัติศาสตร์ ตามที่ระบุบนป้ายงาน</dd>
-<dt>วันที่</dt><dd>24 ถึง 26 กันยายน 2569 (24-26 September 2026)</dd>
-</dl>
-</article>
-
-<div class="news" style="margin-top:2rem">
-<article><span class="tag tag--blue">บทความ</span><h2 style="font-size:1.35rem">งานเขียนและบทความวิชาการ</h2>
-<p>อ่านงานเขียนและผลงานทางวิชาการได้ที่ <a href="/library/">ห้องสมุด</a></p></article>
-<article><span class="tag tag--blue">กิจกรรม</span><h2 style="font-size:1.35rem">งานเปิดบ้านครั้งต่อไป</h2>
-<p>ยังไม่ประกาศวันและสถานที่</p></article>
-</div>
-
-<p style="margin-top:2rem">ต้องการข่าวสารก่อนหน้านั้น ส่งอีเมล <a href="mailto:patarayapara@gmail.com">patarayapara@gmail.com</a> หรือทักทาง <a href="/contact/#line">LINE</a></p>
-
-</div></section>
+    <!-- ส่วนงานกิจกรรมที่ผ่านมาแล้ว (คงเดิมของเว็บไว้) -->
+    <div class="past-events-box">
+      <span class="news-badge" style="background: #f1f5f9; color: #475569;">กิจกรรมที่ผ่านมาแล้ว</span>
+      <h2 style="color: var(--navy); margin-top: 0.5rem;">Pataraya Synergy 2026 เปิดบ้านปาตารายอ</h2>
+      <p style="color: var(--text-muted);">ครบรอบ 63 ปี วาระครบรอบประวัติศาสตร์ จัดขึ้นเมื่อวันที่ 24 ถึง 26 กันยายน 2569</p>
+    </div>
+  </div>
 </main>
 
+<footer>
+  <div class="wrap" style="text-align: center;">
+    <p>โรงเรียนอิสลามวิทยามูลนิธิ (IWFS) · วิทยาลัยเทคโนโลยีพณิชยการมูฮำมาดีย์ (MUTEC) · มูลนิธิเพื่อการศึกษามูฮำมาดียะห์ (MUEF)</p>
+    <p style="margin-top: 0.5rem;">ตำบลจะแหน อำเภอสะบ้าย้อย จังหวัดสงขลา 90210 · อีเมล <a href="mailto:patarayapara@gmail.com">patarayapara@gmail.com</a></p>
+  </div>
+</footer>
+
 <script>
-async function renderDynamicNews() {
-  const latestContainer = document.getElementById('dynamic-latest-news');
-  const gridContainer = document.getElementById('dynamic-news-grid');
+async function fetchAndRenderNews() {
+  const latestRoot = document.getElementById('latest-news-root');
+  const subRoot = document.getElementById('sub-news-root');
+  const subHeader = document.getElementById('sub-news-header');
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQe0ljXjRA5jN_mgYpv4F8oiPKAwnwxJO0qEYRfRwW-5mdRoLCLpiNt0zSU9Gnw51vwfGas24Ov9Cu0/pub?gid=1444979164&single=true&output=csv';
 
   function parseCSV(text) {
     const lines = text.trim().split('\n');
     return lines.map(line => {
-      const result = [];
-      let current = '';
+      const res = [];
+      let cur = '';
       let inQuotes = false;
       for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        if (char === '"') { inQuotes = !inQuotes; }
-        else if (char === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
-        else { current += char; }
+        const c = line[i];
+        if (c === '"') { inQuotes = !inQuotes; }
+        else if (c === ',' && !inQuotes) { res.push(cur.trim()); cur = ''; }
+        else { cur += c; }
       }
-      result.push(current.trim());
-      return result;
+      res.push(cur.trim());
+      return res;
     });
   }
 
   try {
-    const response = await fetch(csvUrl);
-    const data = await response.text();
-    const rows = parseCSV(data);
+    const res = await fetch(csvUrl);
+    const text = await res.text();
+    const rows = parseCSV(text);
     if (rows.length < 2) return;
 
     const headers = rows[0];
-    const newsItems = rows.slice(1).map(row => {
-      const item = {};
-      headers.forEach((h, index) => {
-        item[h] = row[index] ? row[index].replace(/^"|"$/g, '').trim() : '';
+    const items = rows.slice(1).map(row => {
+      const obj = {};
+      headers.forEach((h, idx) => {
+        obj[h] = row[idx] ? row[idx].replace(/^"|"$/g, '').trim() : '';
       });
-      return item;
+      return obj;
     });
 
-    const publishedNews = newsItems.filter(item => item.Status && item.Status.toLowerCase() === 'published').reverse();
-    if (publishedNews.length === 0) return;
+    // คัดกรองเฉพาะสถานะ Published และเรียงข่าวล่าสุดขึ้นก่อน
+    const newsList = items.filter(n => n.Status && n.Status.toLowerCase() === 'published').reverse();
 
-    const topNews = publishedNews[0];
-    const defaultImage = topNews.ImageURL || '/assets/img/wami-group-960.webp';
-    latestContainer.innerHTML = `
-      <div class="card lab-card news-card" style="display: block; border-radius: 12px; overflow: hidden; background: #0f2f4f; color: #fff;">
-        <img src="${defaultImage}" style="width:100%; height:auto; max-height:420px; object-fit:cover;" alt="${topNews.Title}">
-        <div style="padding: 1.5rem;">
-          <span class="tag tag--blue" style="background:#0284c7; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; font-weight:bold;">
-            ล่าสุด · ${topNews.Date} · ${topNews.Category || 'ข่าวประชาสัมพันธ์'}
-          </span>
-          <h3 style="margin-top:10px; color:#fff; font-size:1.5rem;">${topNews.Title}</h3>
-          <p style="margin-top:10px; font-size:0.95rem; opacity:0.9; line-height:1.6;">${topNews.Summary || topNews.Content}</p>
-          <div style="margin-top:12px; font-size:0.8rem; opacity:0.6;">ลงข่าวโดย: ${topNews.Author || 'Admin'}</div>
+    if (newsList.length === 0) {
+      latestRoot.innerHTML = `<p style="text-align:center; padding: 2rem;">ไม่มีข่าวสารในขณะนี้</p>`;
+      return;
+    }
+
+    // 1. เรนเดอร์ข่าวเด่นอันดับ 1 (Featured Card)
+    const top = newsList[0];
+    latestRoot.innerHTML = `
+      <article class="featured-news-card">
+        ${top.ImageURL ? `<img src="${top.ImageURL}" style="width:100%; height:320px; object-fit:cover;" alt="${top.Title}">` : ''}
+        <div class="featured-content">
+          <div>
+            <span class="news-badge">${top.Category || 'ข่าวประชาสัมพันธ์'}</span>
+            <span class="news-date">📅 ${top.Date}</span>
+          </div>
+          <h2 class="featured-title">${top.Title}</h2>
+          <p class="featured-body">${top.Content || top.Summary}</p>
+          <div class="author-tag">เผยแพร่โดย: ${top.Author || 'ฝ่ายประชาสัมพันธ์'}</div>
         </div>
-      </div>`;
+      </article>
+    `;
 
-    if (publishedNews.length > 1) {
-      gridContainer.innerHTML = `<h3>ข่าวสารและกิจกรรมอื่นๆ</h3>` + publishedNews.slice(1).map(news => `
-        <article style="border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
-          <span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">${news.Category || 'ข่าวสาร'}</span>
-          <span style="color: #6b7280; font-size: 0.8rem; margin-left: 8px;">${news.Date}</span>
-          <h4 style="font-size: 1.2rem; margin: 8px 0; color: #0f2f4f;">${news.Title}</h4>
-          <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.5;">${news.Content || news.Summary}</p>
+    // 2. เรนเดอร์ข่าวอื่นๆ ในรูปแบบ Grid
+    if (newsList.length > 1) {
+      subHeader.style.display = 'block';
+      const others = newsList.slice(1);
+      subRoot.innerHTML = others.map(item => `
+        <article class="sub-news-card">
+          <div>
+            ${item.ImageURL ? `<img src="${item.ImageURL}" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;" alt="${item.Title}">` : ''}
+            <span class="news-badge">${item.Category || 'กิจกรรม'}</span>
+            <span class="news-date">📅 ${item.Date}</span>
+            <h3 class="sub-news-title">${item.Title}</h3>
+            <p class="sub-news-summary">${item.Summary || item.Content}</p>
+          </div>
+          <div class="author-tag">โดย: ${item.Author || 'Admin'}</div>
         </article>
       `).join('');
     }
-  } catch (error) {
-    console.error('Error fetching dynamic news:', error);
+
+  } catch (err) {
+    console.error('Fetch error:', err);
+    latestRoot.innerHTML = `<p style="color:red; text-align:center;">เกิดข้อผิดพลาดในการโหลดข้อมูล</p>`;
   }
 }
-document.addEventListener('DOMContentLoaded', renderDynamicNews);
+document.addEventListener('DOMContentLoaded', fetchAndRenderNews);
 </script>
 
-<footer class="site-footer"><div class="wrap">
-<div class="cols">
-<div>
-<a class="brand" href="/"><img src="/assets/img/mark-dark.svg" width="52" height="44" alt=""><span><b>เครือข่ายการศึกษาปาตารายอ</b><span>Pataraya Education Network</span></span></a>
-<p style="margin-top:1rem">โรงเรียน<wbr>อิสลามวิทยา<wbr>มูลนิธิ (IWFS)<br>วิทยาลัย<wbr>เทคโนโลยี<wbr><span class="nb">พณิชยการ</span><wbr><span class="nb">มูฮำมาดีย์</span> (MUTEC)<br>มูลนิธิ<wbr>เพื่อการศึกษา<wbr><span class="nb">มูฮำมาดียะห์</span> (MUEF)</p>
-</div>
-<div>
-<h2>เดินดูบ้าน</h2>
-<ul>
-<li><a href="/">ห้องโถง</a> <span class="room">หน้าแรก</span></li><li><a href="/about/">ห้องรับแขก</a> <span class="room">เราเชื่ออะไร และประวัติ</span></li><li><a href="/network/">ห้องประชุม</a> <span class="room">บุคลากรและเครือข่าย</span></li><li><a href="/honors/">ห้องเกียรติยศ</a> <span class="room">ความภาคภูมิใจของบ้าน</span></li><li><a href="/programs/">ภาพรวมห้องเรียน</a> <span class="room">หลักสูตรและโรงเรียนทั้งหมด</span></li><li><a href="/raya-hub/">ห้องแลป</a> <span class="room">นวัตกรรมและแพลตฟอร์ม</span></li><li><a href="/library/">ห้องสมุด</a> <span class="room">งานเขียนและบทเรียน</span></li><li><a href="/news/">ห้องข่าว</a> <span class="room">ข่าวและกิจกรรม</span></li><li><a href="/faq/">ห้องนั่งเล่น</a> <span class="room">FAQ ผู้ปกครอง</span></li><li><a href="/contact/">หน้าประตู</a> <span class="room">ติดต่อ อีเมล LINE ที่ตั้ง</span></li>
-</ul>
-</div>
-<div>
-<h2>ติดต่อ</h2>
-<p>อีเมล <a href="mailto:patarayapara@gmail.com">patarayapara@gmail.com</a><br>LINE: <a href="/contact/#line">ดู QR และลิงก์</a><br>ตำบลจะแหน อำเภอสะบ้าย้อย<br>จังหวัดสงขลา 90210</p>
-</div>
-</div>
-<p class="legal">ภาพบุคคลในเว็บนี้ใช้โดยได้รับความยินยอมจากเจ้าของภาพ ติดต่อทางอีเมลและ LINE · <a href="/write/">ส่งงานเขียน</a> · <a href="/privacy/">ความเป็นส่วนตัว</a></p>
-</div></footer>
 </body>
 </html>
