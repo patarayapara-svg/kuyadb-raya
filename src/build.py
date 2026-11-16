@@ -334,7 +334,7 @@ home = f'''
 <section class="section" id="latest"><div class="wrap">
 <div class="section-head"><p class="eyebrow">ห้องข่าว</p><h2>ข่าวล่าสุด</h2></div>
 <div class="news-latest">
-<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">ล่าสุด · 11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
+<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/">{pic('news-cs-pattani-2','นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ นั่งร่วมกับสูไฮลา มะเด็ง ผู้ติดตาม ที่โต๊ะประชุม','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">ล่าสุด · 11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
 <a class="card lab-card news-card" href="/news/wami-iwfs-musolla/">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a>
 </div>
 <p style="margin-top:1rem"><a class="more" href="/news/">ดูข่าวทั้งหมดในห้องข่าว</a></p>
@@ -806,7 +806,7 @@ news = f'''
 <div id="sheet-news" class="sheet-news news-feed" data-csv="{NEWS_CSV.replace('&','&amp;')}" aria-live="polite" aria-busy="true"><div class="sn-status"><p>กำลังโหลดข่าวล่าสุด…</p></div></div>
 <noscript><p>เปิด JavaScript เพื่อดูข่าวจากตาราง หากปิดสคริปต์ ข่าวที่อยู่ในหน้านี้ยังอ่านได้ด้านล่าง</p></noscript>
 <div id="static-news" class="news-latest">
-<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/" data-sheet-id="2" data-date="2026-11-11" data-category="IWFS" data-title="ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
+<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/" data-sheet-id="2" data-date="2026-11-11" data-category="IWFS" data-title="ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้">{pic('news-cs-pattani-2','นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ นั่งร่วมกับสูไฮลา มะเด็ง ผู้ติดตาม ที่โต๊ะประชุม','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
 <a class="card lab-card news-card" href="/news/wami-iwfs-musolla/" data-sheet-id="1" data-date="2026-11-05" data-category="IWFS" data-title="ตัวแทนจาก WAMI Thailand มาเยือน IWFS เพื่อสนับสนุนมูซอลลา">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a>
 </div>
 <h2 class="news-archive-h">ข่าวและกิจกรรมที่ผ่านมา</h2>
@@ -984,7 +984,9 @@ iwfs_hear = f'''
 <p><a href="/news/">กลับไปห้องข่าว</a></p>
 <span class="tag tag--blue">11 พ.ย. 2569 · IWFS</span>
 <h2>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h2>
-<figure class="photo">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:700px) 50vw, 100vw')}<figcaption>ตราโรงเรียนอิสลามวิทยามูลนิธิ (IWFS) ใช้ประกอบข่าวนี้ เนื่องจากยังไม่มีภาพจากงาน</figcaption></figure>
+<figure class="photo">{pic('news-cs-pattani-2','นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ นั่งร่วมกับสูไฮลา มะเด็ง ผู้ติดตาม ที่โต๊ะประชุม','(min-width:700px) 50vw, 100vw')}<figcaption>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิและผู้ติดตาม ที่โต๊ะประชุม โรงแรม ซี.เอส. ปัตตานี</figcaption></figure>
+<figure class="photo">{pic('news-cs-pattani-1','โต๊ะประธานและผู้เข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษา ในห้องประชุมโรงแรม ซี.เอส. ปัตตานี','(min-width:700px) 50vw, 100vw')}<figcaption>โต๊ะประธานการประชุมรับฟังความคิดเห็นด้านการศึกษา</figcaption></figure>
+<figure class="photo">{pic('news-cs-pattani-3','ภาพรวมห้องประชุม ผู้เข้าร่วมนั่งเป็นแถวหันไปทางโต๊ะประธานและจอภาพ','(min-width:700px) 50vw, 100vw')}<figcaption>ภาพรวมห้องประชุม โรงแรม ซี.เอส. ปัตตานี</figcaption></figure>
 <dl class="facts">
 <dt>วันที่</dt><dd>11 พฤศจิกายน 2569</dd>
 <dt>ผู้เข้าร่วม</dt><dd>นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ พร้อมด้วยสูไฮลา มะเด็ง ผู้ติดตาม</dd>
@@ -1003,7 +1005,7 @@ page('/news/iwfs-cs-pattani-hearing/', 'news',
      iwfs_hear, iwfs_hear_hero)
 
 # ---------------- NEWS POST: WAMI ----------------
-POSTS = [('/news/iwfs-cs-pattani-hearing/', 'ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้', 'iwfs-news-card'),
+POSTS = [('/news/iwfs-cs-pattani-hearing/', 'ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้', 'news-cs-pattani-2'),
          ('/news/wami-iwfs-musolla/', 'ตัวแทนจาก WAMI Thailand มาเยือน IWFS เพื่อสนับสนุนมูซอลลา', 'b-hero')]
 wami_hero = sub_hero('ห้องข่าว', 'กิจกรรม', 'ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span>', 'วันที่ 5 พฤศจิกายน 2569 ที่โรงเรียนอิสลามวิทยามูลนิธิ (IWFS)')
 wami = f'''
