@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pataraya-pilot.vercel.app/sitemap.xml
