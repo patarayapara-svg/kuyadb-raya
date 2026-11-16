@@ -3,3 +3,9 @@
 __pycache__/
 *.pyc
 shots/
+# local build inputs restored by scripts/fetch-binary-assets.sh (same files as public/)
+assets/img/
+assets/fonts/*.woff2
+assets/og.jpg
+assets/vendor/
+assets/downloads/
