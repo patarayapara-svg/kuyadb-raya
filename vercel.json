@@ -1,0 +1,77 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/((?!assets/).*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self' https://nwfakwozrgtypkvhakxu.supabase.co wss://nwfakwozrgtypkvhakxu.supabase.co https://docs.google.com https://*.googleusercontent.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/contact/faq",
+      "destination": "/faq/",
+      "permanent": false
+    },
+    {
+      "source": "/contact/faq/",
+      "destination": "/faq/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/library/w/:slug",
+      "destination": "/library/w/"
+    },
+    {
+      "source": "/library/w/:slug/",
+      "destination": "/library/w/"
+    }
+  ]
+}
