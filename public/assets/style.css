@@ -346,12 +346,25 @@ a[href^="tel:"]{white-space:nowrap}
 .soc-link .ico{flex:none;width:36px;height:36px;padding:7px;border-radius:50%;background:var(--blue);color:#fff}
 .soc-link b{display:block;font:600 1rem/1.3 var(--f-head)}
 .soc-link small{display:block;font-size:.875rem;color:var(--stone);overflow-wrap:anywhere}
-.news-latest{max-width:44rem}
+.news-latest,.news-feed,#sheet-news{display:grid;gap:var(--gap,1.25rem);max-width:none}
+@media (min-width:760px){.news-latest,.news-feed,#sheet-news{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.news-latest[hidden],.news-feed[hidden],#sheet-news[hidden],#static-news[hidden]{display:none!important}
 .news-card{padding:0;overflow:hidden}
 .news-card img{width:100%;aspect-ratio:16/9;object-fit:cover;height:auto;display:block}
-.news-card .tag,.news-card h3,.news-card .more{margin-left:1.2rem;margin-right:1.2rem}
+.news-card .tag,.news-card h3,.news-card p,.news-card .more{margin-left:1.2rem;margin-right:1.2rem}
 .news-card .tag{margin-top:1rem}
+.news-card p{margin-top:.4rem}
 .news-card .more{display:inline-block;margin-bottom:1.2rem}
+.news-card[data-open]{cursor:pointer}
+.news-modal-back{position:fixed;inset:0;z-index:80;background:rgba(15,47,79,.55);display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem 3rem;overflow:auto}
+.news-modal{background:#fff;border-radius:var(--r,12px);box-shadow:var(--shadow-md);max-width:44rem;width:100%;margin:auto;padding:1.4rem 1.4rem 1.6rem;position:relative}
+.news-modal h2{margin-top:.4rem}
+.news-modal .news-gallery{display:grid;gap:1rem;margin:1.2rem 0}
+.news-modal .news-gallery img{width:100%;height:auto;border-radius:var(--r,12px);aspect-ratio:16/9;object-fit:cover}
+.news-modal .form-actions{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.news-modal-close{position:absolute;top:.6rem;right:.6rem;min-width:44px;min-height:44px;border:0;background:transparent;color:var(--navy);font-size:1.4rem;cursor:pointer;border-radius:var(--r-sm,8px)}
+.news-modal-close:focus-visible,.news-modal a:focus-visible,.news-modal button:focus-visible{outline:2px solid var(--blue,#0284c7);outline-offset:2px}
+body.news-modal-open{overflow:hidden}
 .hero .pic img{object-fit:cover}
 
 .shelves--fill{align-items:start}

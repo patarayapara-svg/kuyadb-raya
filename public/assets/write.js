@@ -316,7 +316,7 @@ async function pageRead(root){
   const parts = location.pathname.replace(/\/+$/,'').split('/');
   const slug = parts[parts.length-1];
   if(!slug || slug==='w'){ root.innerHTML = '<p>ไม่พบบทความ</p>'; return; }
-  const { data, error } = await sb.from('submissions').select('*').eq('slug', slug).eq('status','approved').maybeSingle();
+  const { data, error } = await sb.from('submissions').select('id,title,slug,body,cover_path,category,author_name,author_affiliation,author_title,published_at').eq('slug', slug).eq('status','approved').maybeSingle();
   if(error || !data){ root.innerHTML = '<p>ไม่พบบทความนี้ หรือยังไม่ได้รับการเผยแพร่</p>'; return; }
   document.title = data.title + ' | ห้องสมุด เครือข่ายการศึกษาปาตารายอ';
   const desc = document.querySelector('meta[name="description"]');

@@ -333,7 +333,10 @@ home = f'''
 
 <section class="section" id="latest"><div class="wrap">
 <div class="section-head"><p class="eyebrow">ห้องข่าว</p><h2>ข่าวล่าสุด</h2></div>
-<div class="news-latest"><a class="card lab-card news-card" href="/news/wami-iwfs-musolla/">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">ล่าสุด · 5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a></div>
+<div class="news-latest">
+<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">ล่าสุด · 11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
+<a class="card lab-card news-card" href="/news/wami-iwfs-musolla/">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a>
+</div>
 <p style="margin-top:1rem"><a class="more" href="/news/">ดูข่าวทั้งหมดในห้องข่าว</a></p>
 </div></section>
 
@@ -800,10 +803,13 @@ news_hero = sub_hero('ห้องข่าว', 'ข่าวและกิจ
 news = f'''
 <section class="section"><div class="wrap" style="max-width:60rem">
 <h2 style="font-size:1.35rem">ข่าวล่าสุด</h2>
-<div id="sheet-news" class="sheet-news" data-csv="{NEWS_CSV.replace('&','&amp;')}" aria-live="polite" aria-busy="true"><div class="sn-status"><p>กำลังโหลดข่าวล่าสุด…</p></div></div>
-<noscript><p>เปิด JavaScript เพื่อดูข่าวล่าสุด</p></noscript>
+<div id="sheet-news" class="sheet-news news-feed" data-csv="{NEWS_CSV.replace('&','&amp;')}" aria-live="polite" aria-busy="true"><div class="sn-status"><p>กำลังโหลดข่าวล่าสุด…</p></div></div>
+<noscript><p>เปิด JavaScript เพื่อดูข่าวจากตาราง หากปิดสคริปต์ ข่าวที่อยู่ในหน้านี้ยังอ่านได้ด้านล่าง</p></noscript>
+<div id="static-news" class="news-latest">
+<a class="card lab-card news-card" href="/news/iwfs-cs-pattani-hearing/" data-sheet-id="2" data-date="2026-11-11" data-category="IWFS" data-title="ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">11 พ.ย. 2569 · IWFS</span><h3>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h3><span class="more">อ่านต่อ</span></a>
+<a class="card lab-card news-card" href="/news/wami-iwfs-musolla/" data-sheet-id="1" data-date="2026-11-05" data-category="IWFS" data-title="ตัวแทนจาก WAMI Thailand มาเยือน IWFS เพื่อสนับสนุนมูซอลลา">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a>
+</div>
 <h2 class="news-archive-h">ข่าวและกิจกรรมที่ผ่านมา</h2>
-<div class="news-latest"><a class="card lab-card news-card" href="/news/wami-iwfs-musolla/">{pic('wami-group','ภาพหมู่ตัวแทนจาก WAMI Thailand และผู้ต้อนรับที่ IWFS','(min-width:900px) 40vw, 100vw')}<span class="tag tag--blue">ล่าสุด · 5 พ.ย. 2569 · IWFS</span><h3>ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span></h3><span class="more">อ่านต่อ</span></a></div>
 <article style="margin-top:2.5rem">
 <span class="tag tag--blue">กิจกรรมที่ผ่านมาแล้ว</span>
 <h2>Pataraya Synergy 2026 เปิดบ้านปาตารายอ</h2>
@@ -825,7 +831,7 @@ news = f'''
 </div></section>
 '''
 page('/news/', 'news', 'ห้องข่าว: ข่าวและกิจกรรม | เครือข่ายการศึกษาปาตารายอ',
-     'Pataraya Synergy 2026 เปิดบ้านปาตารายอ ครบรอบ 63 ปี 24-26 กันยายน 2569 และข่าวกิจกรรมของเครือข่าย', news, news_hero, scripts=NEWS_JS)
+     'ติดตามข่าวสาร ความเคลื่อนไหว และกิจกรรมล่าสุดจากเครือข่ายการศึกษาปาตารายอ: โรงเรียนอิสลามวิทยามูลนิธิ (IWFS), วิทยาลัยเทคโนโลยีพณิชยการมูฮำมาดีย์ (MUTEC) และมูลนิธิเพื่อการศึกษามูฮำมาดียะห์', news, news_hero, scripts=NEWS_JS)
 
 
 # ---------------- LIBRARY ----------------
@@ -971,8 +977,34 @@ page('/honors/', 'honors', 'ห้องเกียรติยศ | เคร�
      'ความภาคภูมิใจ ก้าวสำคัญ และกิจกรรมของคน สถาบัน และเครือข่ายการศึกษาปาตารายอ', honors, hon_hero)
 
 
+# ---------------- NEWS POST: IWFS CS PATTANI ----------------
+iwfs_hear_hero = sub_hero('ห้องข่าว', 'กิจกรรม', 'ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้', 'วันที่ 11 พฤศจิกายน 2569 ณ โรงแรม ซี.เอส. ปัตตานี จังหวัดปัตตานี')
+iwfs_hear = f'''
+<article class="article">
+<p><a href="/news/">กลับไปห้องข่าว</a></p>
+<span class="tag tag--blue">11 พ.ย. 2569 · IWFS</span>
+<h2>ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้</h2>
+<figure class="photo">{pic('iwfs-news-card','การ์ดตราโรงเรียนอิสลามวิทยามูลนิธิ สำหรับข่าววันที่ 11 พฤศจิกายน 2569','(min-width:700px) 50vw, 100vw')}<figcaption>ตราโรงเรียนอิสลามวิทยามูลนิธิ (IWFS) ใช้ประกอบข่าวนี้ เนื่องจากยังไม่มีภาพจากงาน</figcaption></figure>
+<dl class="facts">
+<dt>วันที่</dt><dd>11 พฤศจิกายน 2569</dd>
+<dt>ผู้เข้าร่วม</dt><dd>นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ พร้อมด้วยสูไฮลา มะเด็ง ผู้ติดตาม</dd>
+<dt>สถานที่</dt><dd>โรงแรม ซี.เอส. ปัตตานี จังหวัดปัตตานี</dd>
+<dt>ผู้จัด</dt><dd>ศูนย์ขับเคลื่อนการศึกษาในจังหวัดชายแดนภาคใต้ (ศค.จชต.) ร่วมกับสำนักงานสภาความมั่นคงแห่งชาติ (สมช.)</dd>
+<dt>ฐานะ</dt><dd>ตัวแทนผู้บริหารโรงเรียนเอกชนในระบบจากพื้นที่นำร่อง 14 อำเภอ</dd>
+</dl>
+<p>วันที่ 11 พฤศจิกายน 2569 นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ พร้อมด้วยสูไฮลา มะเด็ง ผู้ติดตาม เข้าร่วมการประชุมรับฟังความคิดเห็นต่อแนวทางการขับเคลื่อนงานการศึกษาในระดับพื้นที่จังหวัดชายแดนภาคใต้ ณ โรงแรม ซี.เอส. ปัตตานี จังหวัดปัตตานี ในฐานะตัวแทนผู้บริหารโรงเรียนเอกชนในระบบจากพื้นที่นำร่อง 14 อำเภอ</p>
+<p>การประชุมจัดโดยศูนย์ขับเคลื่อนการศึกษาในจังหวัดชายแดนภาคใต้ (ศค.จชต.) ร่วมกับสำนักงานสภาความมั่นคงแห่งชาติ (สมช.) เพื่อเปิดเวทีแลกเปลี่ยนความคิดเห็น สะท้อนปัญหาและอุปสรรค ตลอดจนเสนอแนะแนวทางพัฒนาการศึกษาให้สอดคล้องกับบริบทของพื้นที่</p>
+<p>การเข้าร่วมครั้งนี้เป็นการสะท้อนมุมมองของสถานศึกษาเอกชนในระบบ และมีส่วนร่วมในการกำหนดทิศทางการพัฒนาการศึกษาในจังหวัดชายแดนภาคใต้</p>
+</article>
+'''
+page('/news/iwfs-cs-pattani-hearing/', 'news',
+     'ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้ | ห้องข่าว เครือข่ายการศึกษาปาตารายอ',
+     'วันที่ 11 พฤศจิกายน 2569 นางซีนาวาตีย์ เบ็ญบาเห็ม ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิ พร้อมด้วยสูไฮลา มะเด็ง ผู้ติดตาม เข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษา ณ โรงแรม ซี.เอส. ปัตตานี',
+     iwfs_hear, iwfs_hear_hero)
+
 # ---------------- NEWS POST: WAMI ----------------
-POSTS = [('/news/wami-iwfs-musolla/', 'ตัวแทนจาก WAMI Thailand มาเยือน IWFS เพื่อสนับสนุนมูซอลลา', 'b-hero')]
+POSTS = [('/news/iwfs-cs-pattani-hearing/', 'ผู้อำนวยการโรงเรียนอิสลามวิทยามูลนิธิเข้าร่วมการประชุมรับฟังความคิดเห็นด้านการศึกษาจังหวัดชายแดนภาคใต้', 'iwfs-news-card'),
+         ('/news/wami-iwfs-musolla/', 'ตัวแทนจาก WAMI Thailand มาเยือน IWFS เพื่อสนับสนุนมูซอลลา', 'b-hero')]
 wami_hero = sub_hero('ห้องข่าว', 'กิจกรรม', 'ตัวแทนจาก WAMI Thailand มาเยือน IWFS <span class="nb">เพื่อสนับสนุน</span><wbr><span class="nb">มูซอลลา</span>', 'วันที่ 5 พฤศจิกายน 2569 ที่โรงเรียนอิสลามวิทยามูลนิธิ (IWFS)')
 wami = f'''
 <section class="section"><div class="wrap" style="max-width:60rem">
